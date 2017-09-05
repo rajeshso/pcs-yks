@@ -23,7 +23,7 @@ public class ParentalControlServiceImpl_IntegrationTest {
 
     @Test
     public void whenUserParentLevelIsULevelAndMovieIsULevelThenReturnTrue() throws Exception {
-        final String movieId = "Despicable Me 3";
+        final String movieId = "1";
         final String userLevel = "U";
         ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
         assertTrue(pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel));
@@ -31,7 +31,7 @@ public class ParentalControlServiceImpl_IntegrationTest {
 
     @Test
     public void whenUserParentLevelIsULevelAndMovieIs18LevelThenReturnFalse() throws Exception {
-        final String movieId = "Berlin Syndrome";
+        final String movieId = "5";
         final String userLevel = "U";
         ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
         assertFalse(pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel));
@@ -39,7 +39,7 @@ public class ParentalControlServiceImpl_IntegrationTest {
 
     @Test
     public void whenUserParentLevelIs18LevelAndMovieIsULevelThenReturnTrue() throws Exception {
-        final String movieId = "Despicable Me 3";
+        final String movieId = "1";
         final String userLevel = "18";
         ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
         assertTrue(pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel));
@@ -47,7 +47,7 @@ public class ParentalControlServiceImpl_IntegrationTest {
 
     @Test
     public void whenUserParentLevelIsPGLevelAndMovieIs12LevelThenReturnFalse() throws Exception {
-        final String movieId = "The Levelling";
+        final String movieId = "3";
         final String userLevel = "PG";
         ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
         assertFalse(pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel));

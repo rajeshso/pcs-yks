@@ -10,7 +10,7 @@ public class TestClient {
     public static void main(String[] args) {
         ParentalControlService parentalControlService = new ParentalControlServiceImpl(new DefaultMovieServiceImpl());
         if (args.length != 2) {
-            System.out.println("The usage is TestClient <Movie Name - enclose by quotes if there are spaces> <user PC level - values are U, PG, 12, 15, 18");
+            System.out.println("The usage is TestClient <Movie ID> <user PC level - Accepted values are U, PG, 12, 15, 18");
             System.exit(0);
         }
         String movieName = args[0];
