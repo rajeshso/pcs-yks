@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/movieservice/movieservice.iml" filepath="$PROJECT_DIR$/movieservice/movieservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parentalcontrolservice/parentalcontrolservice.iml" filepath="$PROJECT_DIR$/parentalcontrolservice/parentalcontrolservice.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pcs.iml" filepath="$PROJECT_DIR$/pcs.iml" />
+    </modules>
+  </component>
+</project>
