@@ -68,4 +68,12 @@ public class ParentalControlServiceImpl_IntegrationTest {
         ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
         pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel);
     }
+
+    @Test(expected = TechnicalFailureException.class)
+    public void whenUserInputIsNullThenThrowException() throws Exception {
+        final String movieId = null;
+        final String userLevel = null;
+        ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
+        pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel);
+    }
 }

@@ -13,7 +13,8 @@ public class ParentalControlServiceImpl implements ParentalControlService {
         this.movieService = movieService;
     }
 
-    public boolean isMovieAllowedByParentalControlLevel(String movieId, String userLevel) throws TechnicalFailureException, TitleNotFoundException {
+    public boolean isMovieAllowedByParentalControlLevel(String movieId, String userLevel) throws TechnicalFailureException,
+            TitleNotFoundException {
         Optional<ParentalControlLevel> userParentalLevel = ParentalControlLevel.of(userLevel);
         if (!userParentalLevel.isPresent())
             throw new TechnicalFailureException("Invalid control Level entered as input");
