@@ -11,9 +11,9 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="1.8">
-      <module name="movieservice" target="1.5" />
-      <module name="parentalcontrolservice" target="1.5" />
-      <module name="pcs" target="1.5" />
+      <module name="movieservice" target="1.8" />
+      <module name="parentalcontrolservice" target="1.8" />
+      <module name="pcs" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
