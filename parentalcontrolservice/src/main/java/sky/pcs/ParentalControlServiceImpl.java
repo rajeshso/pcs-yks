@@ -16,7 +16,7 @@ public class ParentalControlServiceImpl implements ParentalControlService {
     public boolean isMovieAllowedByParentalControlLevel(String movieId, String userLevel) throws TechnicalFailureException, TitleNotFoundException {
         Optional<ParentalControlLevel> userParentalLevel = ParentalControlLevel.of(userLevel);
         if (!userParentalLevel.isPresent())
-            throw new TechnicalFailureException("invalid control Level entered as input");
+            throw new TechnicalFailureException("Invalid control Level entered as input");
         ParentalControlLevel movieParentalLevel = getMovieParentalControl(movieId);
         return userParentalLevel.get().isHigherThanOrEqualTo(movieParentalLevel);
     }
@@ -24,14 +24,11 @@ public class ParentalControlServiceImpl implements ParentalControlService {
     private ParentalControlLevel getMovieParentalControl(String movieId) throws TechnicalFailureException, TitleNotFoundException {
         try {
             String controlLevel = movieService.getParentalControlLevel(movieId);
-            if (controlLevel == null) {
-                throw new TechnicalFailureException("invalid control Level returned from movie service");
-            }
-            Optional<ParentalControlLevel> parentalControlLevelOptional
+            Optional<ParentalControlLevel> movieControlLevelOptional
                     = ParentalControlLevel.of(controlLevel);
-            if (!parentalControlLevelOptional.isPresent())
-                throw new TechnicalFailureException("invalid control Level returned from movie service");
-            return parentalControlLevelOptional.get();
+            if (!movieControlLevelOptional.isPresent())
+                throw new TechnicalFailureException("Invalid control Level returned from movie service");
+            return movieControlLevelOptional.get();
         } catch (TechnicalFailureException | TitleNotFoundException ex) {
             throw ex;
         } catch (Exception ex) {

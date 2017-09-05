@@ -1,12 +1,15 @@
 package sky.pcs;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.util.Optional;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
+@RunWith(JUnit4.class)
 public class ParentalControlLevelTest {
 
     @Test
@@ -21,7 +24,7 @@ public class ParentalControlLevelTest {
         String givenId = "18";
         ParentalControlLevel eighteen = ParentalControlLevel.EIGHTEEN;
         Optional<ParentalControlLevel> level = ParentalControlLevel.of(givenId);
-        assertThat(level.isPresent(), is(true));
+        assertTrue(level.isPresent());
         assertThat(level.get(), is(ParentalControlLevel.EIGHTEEN));
     }
 
