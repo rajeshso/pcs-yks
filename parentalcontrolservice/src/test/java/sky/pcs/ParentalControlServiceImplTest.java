@@ -23,10 +23,21 @@ public class ParentalControlServiceImplTest {
     }
 
     @Test
-    public void whenUserParentLevelIsULevelAndMovieIsUThenReturnTrue() throws Exception {
+    public void whenUserParentLevelIsULevelAndMovieIsULevelThenReturnTrue() throws Exception {
         final String movieId = "1";
         final String userLevel = "U";
         final String movieLevel = "U";
+        when(movieService.getParentalControlLevel(movieId)).thenReturn(movieLevel);
+        ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
+        assertTrue(pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel));
+    }
+
+    @Test
+
+    public void whenParentalLevelIsHigherAndMovieLevelIsLowerThenReturnTrue() throws Exception {
+        final String movieId = "1";
+        final String userLevel = "18";
+        final String movieLevel = "15";
         when(movieService.getParentalControlLevel(movieId)).thenReturn(movieLevel);
         ParentalControlService pcs = new ParentalControlServiceImpl(movieService);
         assertTrue(pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel));
