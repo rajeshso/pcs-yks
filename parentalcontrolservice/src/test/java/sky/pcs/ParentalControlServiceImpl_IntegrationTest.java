@@ -61,7 +61,7 @@ public class ParentalControlServiceImpl_IntegrationTest {
         pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel);
     }
 
-    @Test(expected = TechnicalFailureException.class)
+    @Test(expected = InvalidInputException.class)
     public void whenUserLevelIsIncorrectThenThrowException() throws Exception {
         final String movieId = "The Levelling";
         final String userLevel = "I am not the correct user Level";
@@ -69,7 +69,7 @@ public class ParentalControlServiceImpl_IntegrationTest {
         pcs.isMovieAllowedByParentalControlLevel(movieId, userLevel);
     }
 
-    @Test(expected = TechnicalFailureException.class)
+    @Test(expected = InvalidInputException.class)
     public void whenUserInputIsNullThenThrowException() throws Exception {
         final String movieId = null;
         final String userLevel = null;

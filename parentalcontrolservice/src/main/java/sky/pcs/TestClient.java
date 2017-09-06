@@ -1,8 +1,6 @@
 package sky.pcs;
 
 import sky.movie.DefaultMovieServiceImpl;
-import sky.movie.TechnicalFailureException;
-import sky.movie.TitleNotFoundException;
 
 
 public class TestClient {
@@ -21,10 +19,8 @@ public class TestClient {
                 System.out.println("You can watch the movie " + movieName);
             else
                 System.out.println("You cannot watch the movie " + movieName);
-        } catch (TechnicalFailureException e) {
+        } catch (Exception e) {
             System.err.println(e.getMessage());
-        } catch (TitleNotFoundException e) {
-            System.out.println("Sorry, movie service could not find the given movie " + movieName);
         }
     }
 }

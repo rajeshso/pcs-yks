@@ -14,14 +14,14 @@ public class ParentalControlServiceImpl implements ParentalControlService {
     }
 
     public boolean isMovieAllowedByParentalControlLevel(String movieId, String userLevel) throws TechnicalFailureException,
-            TitleNotFoundException {
+            TitleNotFoundException, InvalidInputException {
         try {
             Optional<ParentalControlLevel> userParentalLevel = ParentalControlLevel.of(userLevel);
             if (!userParentalLevel.isPresent())
-                throw new TechnicalFailureException("Invalid control Level entered as input");
+                throw new InvalidInputException("Invalid control Level entered as input");
             ParentalControlLevel movieParentalLevel = getMovieParentalControl(movieId);
             return userParentalLevel.get().isHigherThanOrEqualTo(movieParentalLevel);
-        } catch (TechnicalFailureException | TitleNotFoundException ex) {
+        } catch (TechnicalFailureException | TitleNotFoundException | InvalidInputException ex) {
             throw ex;
         } catch (Exception e) {
             throw new TechnicalFailureException("Service error with Movie Service", e);
