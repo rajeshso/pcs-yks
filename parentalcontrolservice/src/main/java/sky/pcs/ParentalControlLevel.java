@@ -1,19 +1,12 @@
 package sky.pcs;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Optional;
 import java.util.function.Predicate;
 
 public enum ParentalControlLevel {
 
     U("U", 0), PG("PG", 1), TWELVE("12", 2), FIFTEEN("15", 3), EIGHTEEN("18", 4);
-
-    private static final Map<String, Integer> PC_LEVEL_MAP = new HashMap<>();
-
-    static {
-        for (ParentalControlLevel s : EnumSet.allOf(ParentalControlLevel.class)) {
-            PC_LEVEL_MAP.put(s.id, s.val);
-        }
-    }
 
     private final String id;
     private final int val;
