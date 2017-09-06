@@ -14,6 +14,10 @@ public class DefaultMovieServiceImpl implements MovieService {
                 return "15";
             case "5":
                 return "18";
+            case "6":
+                return "U";
+            case "7":
+                return "18";
             default:
                 throw new TitleNotFoundException("Sorry, we could not find the movie " + movieId + " you are looking for.");
         }
