@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/movieservice/movieservice.iml" filepath="$PROJECT_DIR$/movieservice/movieservice.iml" />
       <module fileurl="file://$PROJECT_DIR$/parentalcontrolservice/parentalcontrolservice.iml" filepath="$PROJECT_DIR$/parentalcontrolservice/parentalcontrolservice.iml" />
-      <module fileurl="file://$PROJECT_DIR$/pcs.iml" filepath="$PROJECT_DIR$/pcs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rajeshsomasundaram.iml" filepath="$PROJECT_DIR$/rajeshsomasundaram.iml" />
     </modules>
   </component>
 </project>
